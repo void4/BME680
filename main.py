@@ -22,11 +22,18 @@ offset = 60
 for k, key in enumerate(keys):
 	if k == 0:
 		axes = {key:ax}
+		ax.set_ylabel(key)
+		ax.yaxis.label.set_color(colors[0])
 		xy, = ax.plot([], [], color=colors[k], label=key)
 		lines = {key:xy}
 	else:
 		axes[key] = ax.twinx()
+		
 		lines[key] = axes[key].plot([], [], color=colors[k], label=key)[0]
+		
+		axes[key].set_ylabel(key)
+		axes[key].yaxis.label.set_color(colors[k])
+		
 		if k > 1:
 			axes[key].spines["right"].set_position(("outward", offset*(k-1)))
 
