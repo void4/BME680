@@ -14,8 +14,7 @@ colors = "blue green red black".split()
 
 values = {}
 
-fig, ax = plt.subplots(layout="constrained")
-
+fig, ax = plt.subplots(layout="constrained", num="BME680 sensor measurements")
 
 offset = 60
 
